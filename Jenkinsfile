@@ -12,5 +12,14 @@ pipeline {
                 sh 'pwd'
             }
         }
+        
+        stage('Verify Build Environment') {
+            steps {
+                sh 'python3 --version'
+                sh 'pip3 --version'
+                sh 'whoami'
+            }
+        }
     }
 }
+  
