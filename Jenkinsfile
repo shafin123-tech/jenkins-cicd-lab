@@ -12,7 +12,7 @@ pipeline {
                 sh 'pwd'
             }
         }
-        
+
         stage('Verify Build Environment') {
             steps {
                 sh 'python3 --version'
@@ -20,6 +20,14 @@ pipeline {
                 sh 'whoami'
             }
         }
+
+        stage('Prepare Environment') {
+            steps {
+                sh 'python3 -m venv .venv'
+                sh '.venv/bin/python --version'
+                sh '.venv/bin/pip --version'
+            }
+        }
     }
 }
-  
+
