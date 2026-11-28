@@ -23,7 +23,7 @@ pipeline {
 
         stage('Prepare Environment') {
             steps {
-                sh 'python3 -m venv .venv'
+                sh 'python3 -m venv --clear .venv'
                 sh '.venv/bin/python --version'
                 sh '.venv/bin/pip --version'
             }
